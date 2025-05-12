@@ -36,9 +36,9 @@
                     console.log("商品は以下の" + Item.number + "種類です。");
 
                     // 配列の内容を項目毎に出力
-                    for(let i = 0;i<= (items.length-1); i++){
-                        console.log("商品番号: " + items[i]["id"] +", 商品名: "+ items[i]["name"] + 
-                        ", 金額: "+ items[i]["price"] + ",  在庫数: "+ items[i]["stock"])
+                    for(let i = 0;i<= (list.length-1); i++){
+                        console.log("商品番号: " + list[i].id +", 商品名: "+ list[i].name + 
+                        ", 金額: "+ list[i].price + ",  在庫数: "+ list[i].stock)
                     }
                     console.log(""); // 空行の出力
                 }
@@ -49,6 +49,7 @@
                         console.log("商品番号: "+this.id+", 商品名: "+this.name+"を購入します。");
                         // 課題4-2. ここにコードを書く
                         // 購入による商品の在庫削減処理
+
                         
                         // 課題4-3. ここにコードを書く
                         // 在庫用のエレメントを抽出し、HTML内の個数を更新
@@ -66,12 +67,13 @@
 
             // 課題4-1. ここにコード書く
             // 商品オブジェクトの生成
-            for(let i = 0 ; i<(items.length -1); i++){
-                item_list[i] = new Item(items[i]["name"], items[i]["price"], items[i]["stock"]);
+            for(let i = 0 ; i<=(items.length -1); i++){
+                item_list[i] = new Item(items[i].name, items[i].price, items[i].stock);
             }
 
             // 課題4-2. ここにコードを書く
             // 商品表の作成
+
 
             // クリックイベント時の購入処理の設定
             for (let i=0; i<item_list.length; i++) {
